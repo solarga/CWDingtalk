@@ -41,7 +41,7 @@
                         <el-tabs value="today" :stretch="false">
                                <el-tab-pane label="今天" name="today">
                                    <div class="tab-container">
-                                       <div></div>
+                                       <div>使用情况表格</div>
                                    </div>
                                </el-tab-pane>
                                <el-tab-pane label="明天" name="second">
