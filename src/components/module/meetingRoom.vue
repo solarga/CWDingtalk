@@ -10,9 +10,12 @@
                                 <el-input v-model="qureyData.name" placeholder="会议室名称"></el-input>
                             </el-form-item>
                         <el-form-item label="会议室位置：">
-                           <el-select v-model="qureyData.region" placeholder="活动区域">
-                                <el-option label="区域一" value="shanghai"></el-option>
-                                <el-option label="区域二" value="beijing"></el-option>
+                           <el-select v-model="qureyData.region" placeholder="位置">
+                                <el-option label="倍特办公区" value="shanghai"></el-option>
+                                <el-option label="M3办公区" value="beijing"></el-option>
+                                <el-option label="M4办公区" value="beijing"></el-option>
+                                <el-option label="L1办公区" value="beijing"></el-option>
+                                <el-option label="誉峰会所办公区" value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item>
@@ -26,9 +29,9 @@
                 <el-row v-for="(item, idx) in meetingRooms" :key="idx">
                     <el-col>
                         <div class="meetingRooms">
-                            <el-card shadow="hover" :body-style="{ padding: '0px',margin:'20px' }">
+                            <el-card shadow="hover" :body-style="{padding: '0px',margin:'20px'}">
                                 <el-row>
-                                    <el-col :span="18">
+                                    <el-col :span="17">
                                         <el-row>
                                             <el-col :span="3">
                                                  <img :src="item.img" class="image">                                               
@@ -38,23 +41,20 @@
                                                  <span class="miniText"> 坐席{{ item.seats }}人</span> 
                                                  <p class="miniText">会议室地点：{{item.address}}</p>
                                                   <p>
-                                                     <el-tag class="tags" size="small" type="info" v-for="(r,id) in item.resource" :key="id" >{{r}}</el-tag> 
+                                                     <el-tag class="tags" size="mini" type="info" v-for="(r,id) in item.resource" :key="id" >{{r}}</el-tag> 
                                                  </p>
                                             </el-col>
                                         </el-row>
                                     </el-col>
-                                    <el-col :span="6">
+                                    <el-col :span="7" class="btns">
                                         <div>                                                                  
-                                            <el-button  size="small" type="primary" icon="el-icon-edit-outline"  @click="editRoom(idx)">编辑</el-button>
-                                            <el-button  size="small" type="danger" icon="el-icon-delete" @click="deleteRoom(idx)">删除</el-button>
-                                            <el-button  size="small" icon="el-icon-picture">二维码</el-button>
+                                            <el-button  size="mini" type="primary" icon="el-icon-edit-outline"  @click="editRoom(idx)">编辑</el-button>
+                                            <el-button  size="mini" type="danger" icon="el-icon-delete" @click="deleteRoom(idx)">删除</el-button>
+                                            <el-button  size="mini" icon="el-icon-picture">二维码</el-button>
                                         </div>
                                     </el-col>
-                                </el-row>
-                               
-                                  
-                                          
-                            </el-card>
+                                </el-row>                               
+                           </el-card>
                         </div>
                     </el-col>
                 </el-row>
@@ -229,15 +229,15 @@ function guid() {
 </script>
 <style scoped>
 .manage {
-  margin: 10px 20px 10px 20px;
   padding: 10px 20px 10px 20px;
-  background-color: #f2f6fc;
+  border: 1px solid #dcdfe6;
+  background-color: #fff;
 }
 .meetingRooms {
-  margin: 10px;
+ margin-top: 10px;
 }
 .qureyform {
-  margin: 10px 20px 0px 20px;
+  margin-bottom: -10px;
 }
 .miniText {
   font-size: 12px;
@@ -255,5 +255,9 @@ hr {
 }
 .tags{
   margin-right: 5px;
+}
+.btns{
+  padding-top:30px; 
+  height: 100%;
 }
 </style>

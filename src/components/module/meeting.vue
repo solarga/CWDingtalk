@@ -6,17 +6,18 @@
                     <el-col>
                       <div class="qureyform">
                         <el-form :inline="true" :model="qureyData" class="demo-form-inline" size="small">
-                            <el-form-item label="会议室名称：">
+                            <el-form-item label="会议室：">
                                 <el-input v-model="qureyData.name" placeholder="会议室名称"></el-input>
                             </el-form-item>
-                        <el-form-item label="会议室位置：">
-                           <el-select v-model="qureyData.region" placeholder="活动区域">
-                                <el-option label="区域一" value="shanghai"></el-option>
-                                <el-option label="区域二" value="beijing"></el-option>
+                        <el-form-item label="会议状态：">
+                           <el-select v-model="qureyData.region" placeholder="会议状态">
+                                <el-option label="已完成" value="shanghai"></el-option>
+                                <el-option label="未开始" value="beijing"></el-option>
+                                <el-option label="已取消" value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item>
-                            <el-button type="primary" >查询</el-button>
+                            <el-button type="primary" >筛选</el-button>
                         </el-form-item>
                         </el-form>
                       </div>
@@ -33,7 +34,7 @@
                                        <span class="miniText">会议室：{{item.meetingRoom}}</span>  
                                        <el-tag type="success" style="float: right;">已完成</el-tag>                                   
                                  </div>
-                                    <el-row>
+                                <el-row>
                                     <el-col :span="18">
                                         <el-row>
                                             <el-col :span="3">
@@ -44,20 +45,20 @@
                                                  <p class="miniText">
                                                      <span>发起人:{{item.initiator}}</span>
                                                      <span>主持人:{{item.host}}</span>
-                                                     <span>参与人:{{item.personCount}}人</span>
+                                                     <span>与会者:{{item.personCount}}人</span>
                                                  </p> 
                                                  <p>
-                                                     <el-tag size="small" type="info" v-for="(r,id) in item.resource" :key="id" >{{r}}</el-tag> 
+                                                     <el-tag size="mini" type="info" v-for="(r,id) in item.resource" :key="id" >{{r}}</el-tag> 
                                                  </p>
                                             </el-col>
                                         </el-row>
                                     </el-col>
-                                    <el-col :span="6">
+                                    <el-col :span="6" class="btns">
                                         <div>                                                                  
-                                            <el-button   type="primary" icon="el-icon-tickets">详细信息</el-button>
+                                            <el-button   type="primary" icon="el-icon-tickets" size="small" plain>详细信息</el-button>
                                         </div>
                                     </el-col>
-                                  </el-row>                                    
+                                </el-row>                                   
                             </el-card>
                         </div>
                     </el-col>
@@ -134,12 +135,17 @@ export default {
 </script>
 <style scoped>
 .meeting {
-  margin: 10px 20px 10px 20px;
   padding: 10px 20px 10px 20px;
-  background-color: #f2f6fc;
+  background-color: #fff;
+  border: 1px solid #dcdfe6;
+  height: 100%;
+
 }
 .meetings {
-  margin: 20px;
+ margin-top: 10px;
+}
+.qureyform{
+    margin-bottom: -10px;
 }
 hr {
   border: 0;
@@ -149,12 +155,16 @@ hr {
 span,
 p {
   font-size: 12px;
-  color: #606266;
+  color: #999;
   margin-right: 5px;
 }
 .image {
   width: 80px;
   height: 80px;
   border: 0px;
+}
+.btns{
+  padding-top:30px; 
+  height: 100%;
 }
 </style>

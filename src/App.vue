@@ -1,32 +1,41 @@
 <template>
   <div id="app">
-    <leftNav></leftNav>
-    <div class="main">
-     <router-view/>
-    </div>
+    <el-container>
+       <el-aside width="120px">
+            <leftNav></leftNav>
+       </el-aside>
+      <el-main>       
+         <div class="main">
+               <router-view/>
+         </div>
+      </el-main>
+    </el-container>  
   </div>
 </template>
-
 <script>
-import leftNav from './components/leftNav'
+import leftNav from "./components/leftNav";
 export default {
-  name: 'App',
-  components:{leftNav}
-}
+  name: "App",
+  components: { leftNav }
+};
 </script>
-
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
 }
-.main{
-  float:left;
-  width:90%; 
-  background-color: #EBEEF5;
-  height:100%;
-  overflow: auto;
+.el-container{
+  height: 100%;
+}
+.el-aside {
+  background-color: #409eff;
+  text-align: center;
+}
+.el-main {
+  background-color:#EBEEF5;
+}
+.el-menu{
+  border: none;
 }
 </style>

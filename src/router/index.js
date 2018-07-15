@@ -5,6 +5,7 @@ import meeting from '@/components/module/meeting'
 import meetingRoom from '@/components/module/meetingRoom'
 import setting from '@/components/module/setting'
 import list from '@/components/module/list'
+import reserve from '@/components/module/reserve'
 
 Vue.use(Router)
 
@@ -13,7 +14,12 @@ export default new Router({
     {
       path: '/',
       name: 'main',
-      component: main
+      component: main,
+    },
+    {
+      path: '/main/reserve/:meetingRoomId',
+      name: 'reserve',
+      component: reserve,
     },
     {
       path:'/meeting',

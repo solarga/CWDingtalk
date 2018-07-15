@@ -2,7 +2,12 @@
 <div class="left-nav">
  <el-row>
   <el-col>
-    <el-menu  default-active="/" router >
+    <el-menu  default-active="/" router  class="el-menu-vertical-demo"
+      @open="handleOpen"
+      @close="handleClose"
+      background-color="#409EFF"
+      text-color="#fff"
+      active-text-color="#ffd04b">
       <el-menu-item index="/">
         <i class="el-icon-news"></i>
         <span slot="title">预约</span>
@@ -41,10 +46,8 @@ export default {
 };
 </script>
 <style scoped>
-.left-nav {
-  height: 100%;
-  float: left;
-  width: 10%;
+i{
+  color:aliceblue;
 }
 </style>
 
