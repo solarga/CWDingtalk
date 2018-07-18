@@ -4,10 +4,10 @@
 </div>
 </template>
 <script>
-import 'vue-timesheet/dist/vue-timesheet.min.css'
-import vueTimeSheet from 'vue-timesheet';
+//import 'vue-timesheet/dist/vue-timesheet.min.css'
+//import vueTimeSheet from 'vue-timesheet';
 export default {
-    components: {
+   /* components: {
         vueTimeSheet
     },
     data() {
@@ -21,6 +21,7 @@ export default {
             endDate: new Date('2018-07-30')
         }
     }
+    */
 }
 </script>
 <style scoped>

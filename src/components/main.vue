@@ -83,7 +83,7 @@ export default {
     return {
       activeName: "today",
       qureyData: {},
-       meetingRooms: [
+      meetingRooms: [
         {
           roomId: "4222068e-3423-4f0a-a2ae-ce230c6fb888",
           name: "M5会议室",
@@ -106,9 +106,10 @@ export default {
           administrator: "高金龙",
           approval: true
         }
-      ],
+      ]
     };
   }
+  
 };
 </script>
 <style scoped>
@@ -135,7 +136,7 @@ export default {
 }
 .mainRow {
   height: 200px;
-  border-left:#dcdfe6 solid 1px;
+  border-left: #dcdfe6 solid 1px;
 }
 .tab-container {
   padding: 20px;
@@ -149,9 +150,8 @@ export default {
   font-size: 12px;
   color: #999;
   margin-right: 5px;
-
 }
-.tags{
+.tags {
   margin-right: 5px;
 }
 </style>
